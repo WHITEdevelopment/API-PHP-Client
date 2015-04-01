@@ -748,7 +748,7 @@ class WebshopappApiClient
             $this->handleResponseError($responseCode, $responseBody);
         }
 
-        if ($responseBody)
+        if ($responseBody && in_array($url, array('checkouts')) === false)
         {
             $responseBody = array_shift($responseBody);
         }
